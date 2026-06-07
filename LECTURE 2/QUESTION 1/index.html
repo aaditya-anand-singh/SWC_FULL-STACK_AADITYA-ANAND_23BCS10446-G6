@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Dashboard Navigation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="dashboard-container">
+    <header class="dashboard-header">
+      <h1>Account Control Center</h1>
+      <p>Manage system metrics, configuration states, and user access parameters.</p>
+    </header>
+
+    <div class="tab-interface">
+      <div class="tab-list" role="tablist" aria-label="Dashboard Sections">
+        <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="overview-panel" id="tab-overview">
+          Overview
+        </button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="details-panel" id="tab-details" tabindex="-1">
+          Details
+        </button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="settings-panel" id="tab-settings" tabindex="-1">
+          Settings
+        </button>
+      </div>
+
+      <div class="panel-container">
+        
+        <div class="tab-panel active" id="overview-panel" role="tabpanel" aria-labelledby="tab-overview">
+          <h3>System Metrics Snapshot</h3>
+          <p>Your workspace is operating nominally. Total resource usage is within optimal thresholds, with server response times hovering steadily around 42ms globally.</p>
+          <div class="mock-data-box">Cloud Infrastructure Load: <strong>34%</strong></div>
+        </div>
+
+        <div class="tab-panel" id="details-panel" role="tabpanel" aria-labelledby="tab-details" hidden>
+          <h3>Granular Deployment Logs</h3>
+          <p>Reviewing deployment pipelines: Production build hash <code>#g6-swc-2026</code> compiled successfully via automatic webhooks. No exceptions or errors intercepted.</p>
+          <div class="mock-data-box">Region: <strong>us-east-1 (Primary)</strong></div>
+        </div>
+
+        <div class="tab-panel" id="settings-panel" role="tabpanel" aria-labelledby="tab-settings" hidden>
+          <h3>Console Configuration</h3>
+          <p>Adjust variables, toggle security restrictions, and sync user permissions metadata across your organization cluster nodes.</p>
+          <div class="mock-data-box">Security Level: <strong>TLS 1.3 Mandated</strong></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

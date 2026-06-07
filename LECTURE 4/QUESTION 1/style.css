@@ -1,0 +1,176 @@
+/* Document Layout Resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.dashboard-wrapper {
+  width: 100%;
+  max-width: 960px;
+}
+
+/* Header Component Configuration */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  gap: 16px;
+}
+
+.dashboard-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.dashboard-header p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* Dashboard Action Control Button */
+.action-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s, transform 0.1s;
+}
+
+.action-btn:hover { background-color: #1d4ed8; }
+.action-btn:active { transform: scale(0.97); }
+
+/* --- STATE CONTAINERS & UTILITY FLAGS --- */
+.state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 60px 20px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  color: #64748b;
+  font-size: 0.925rem;
+}
+
+.error-box {
+  border-color: #fca5a5;
+  background-color: #fff5f5;
+  color: #991b1b;
+}
+
+.error-icon {
+  font-size: 2rem;
+}
+
+.hidden {
+  display: none !important; /* Forces standard elements to hide */
+}
+
+/* Loading Spinner Core Engine Style */
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: spinRotate 0.85s linear infinite;
+}
+
+@keyframes spinRotate {
+  to { transform: rotate(360deg); }
+}
+
+/* --- THE ADAPTIVE USER CARDS MATRIX GRID --- */
+.directory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* User Card Structure layout */
+.user-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: fadeSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar-badge {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.user-meta h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.user-meta .username-tag {
+  font-size: 0.775rem;
+  color: #64748b;
+}
+
+.card-body {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+}
+
+.body-row {
+  color: #475569;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.body-row strong {
+  color: #1e293b;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

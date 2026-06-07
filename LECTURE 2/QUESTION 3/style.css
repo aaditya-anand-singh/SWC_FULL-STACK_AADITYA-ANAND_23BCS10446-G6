@@ -1,0 +1,140 @@
+/* Core Document Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  padding: 40px 20px;
+}
+
+.board-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.board-header {
+  margin-bottom: 24px;
+}
+
+.board-header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.board-header p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+/* Master Grid Structure */
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+/* Individual Column Styles */
+.kanban-column {
+  background-color: #edf2f7;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding: 0 4px;
+}
+
+.column-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.column-count {
+  background-color: #cbd5e1;
+  color: #334155;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+/* Dynamic Card List Target Boxes */
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 150px; /* Crucial: Allows items to drop into an empty column */
+  border-radius: 6px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  border: 2px dashed transparent;
+}
+
+/* Dropzone Interactive State Highlights */
+.card-list.drag-over {
+  background-color: #e2e8f0;
+  border-color: #cbd5e1;
+}
+
+/* Task Card Style Rules */
+.task-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.02);
+  cursor: grab;
+  border: 1px solid #e2e8f0;
+  transition: box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.task-card:active {
+  cursor: grabbing;
+}
+
+/* Opacity utility during transit */
+.task-card.dragging {
+  opacity: 0.4;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.task-card h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.task-card p {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+/* Minimalist metadata tags */
+.card-tag {
+  display: inline-block;
+  font-size: 0.725rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.card-tag.tech { background-color: #e0f2fe; color: #0369a1; }
+.card-tag.design { background-color: #fce7f3; color: #be185d; }
+.card-tag.testing { background-color: #fef3c7; color: #b45309; }
+.card-tag.ops { background-color: #dcfce7; color: #15803d; }

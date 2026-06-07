@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Analytics Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo"></div>
+        <span>Console Analytics</span>
+      </div>
+      <nav class="nav-list">
+        <a href="#" class="nav-item active">Dashboard</a>
+        <a href="#" class="nav-item">Performance</a>
+        <a href="#" class="nav-item">Customers</a>
+        <a href="#" class="nav-item">System Logs</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      
+      <header class="top-bar">
+        <div class="header-title">
+          <h1>System Overview</h1>
+          <p>Real-time analytics monitor.</p>
+        </div>
+        <div class="user-profile">
+          <div class="user-avatar">AD</div>
+        </div>
+      </header>
+
+      <section class="kpi-grid">
+        
+        <div class="card kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Total Revenue</span>
+            <span class="kpi-icon money"></span>
+          </div>
+          <div class="kpi-value">$48,256.00</div>
+          <div class="kpi-badge positive">+12.4% <span class="trend-text">vs last month</span></div>
+        </div>
+
+        <div class="card kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Active Sessions</span>
+            <span class="kpi-icon users"></span>
+          </div>
+          <div class="kpi-value">1,482</div>
+          <div class="kpi-badge positive">+4.1% <span class="trend-text">vs last hour</span></div>
+        </div>
+
+        <div class="card kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Server Workload</span>
+            <span class="kpi-icon cpu"></span>
+          </div>
+          <div class="kpi-value">28.4%</div>
+          <div class="kpi-badge negative">-2.5% <span class="trend-text">vs peak average</span></div>
+        </div>
+
+        <div class="card kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">Conversion Rate</span>
+            <span class="kpi-icon target"></span>
+          </div>
+          <div class="kpi-value">3.24%</div>
+          <div class="kpi-badge positive">+0.8% <span class="trend-text">vs last week</span></div>
+        </div>
+
+      </section>
+
+      <section class="data-grid">
+        
+        <div class="card dynamic-display">
+          <div class="card-header">
+            <h3>Performance Trends</h3>
+            <span class="action-link">View Report</span>
+          </div>
+          <div class="chart-placeholder">
+            <div class="bar-chart-mock">
+              <div class="bar" style="height: 40%"></div>
+              <div class="bar" style="height: 65%"></div>
+              <div class="bar" style="height: 50%"></div>
+              <div class="bar" style="height: 85%"></div>
+              <div class="bar" style="height: 70%"></div>
+              <div class="bar" style="height: 95%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card table-display">
+          <div class="card-header">
+            <h3>Recent Node Events</h3>
+            <span class="status-indicator live">Live</span>
+          </div>
+          
+          <div class="table-responsive">
+            <table class="analytics-table">
+              <thead>
+                <tr>
+                  <th>Origin Node</th>
+                  <th>Request Path</th>
+                  <th>Status Code</th>
+                  <th>Response Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>us-east-cluster-0</strong></td>
+                  <td><code>/api/v1/auth/token</code></td>
+                  <td><span class="tag-status success">200 OK</span></td>
+                  <td>14ms</td>
+                </tr>
+                <tr>
+                  <td><strong>eu-central-node-1</strong></td>
+                  <td><code>/api/v1/checkout/pay</code></td>
+                  <td><span class="tag-status success">200 OK</span></td>
+                  <td>42ms</td>
+                </tr>
+                <tr>
+                  <td><strong>us-west-edge-4</strong></td>
+                  <td><code>/api/v1/user/settings</code></td>
+                  <td><span class="tag-status warning">304 Cache</span></td>
+                  <td>8ms</td>
+                </tr>
+                <tr>
+                  <td><strong>ap-south-cluster-2</strong></td>
+                  <td><code>/api/v1/gateway/sync</code></td>
+                  <td><span class="tag-status error">500 Fail</span></td>
+                  <td>112ms</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>

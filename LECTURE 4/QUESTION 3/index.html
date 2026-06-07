@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autocomplete Suggestion Engine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="search-engine-wrapper">
+    <header class="search-logo-header">
+      <h1><span class="g-blue">S</span><span class="g-red">e</span><span class="g-amber">a</span><span class="g-blue">r</span><span class="g-green">c</span><span class="g-red">h</span></h1>
+      <p>Type to see real-time suggestions with full keyboard arrow support.</p>
+    </header>
+
+    <div class="autocomplete-box" id="autocompleteWrapper">
+      <div class="input-track">
+        <input 
+          type="text" 
+          id="autocompleteInput" 
+          placeholder="Search documentation, components, metrics..."
+          autocomplete="off"
+          role="combobox"
+          aria-expanded="false"
+          aria-autocomplete="list"
+          aria-controls="suggestionsDropdown"
+        >
+      </div>
+
+      <ul 
+        id="suggestionsDropdown" 
+        class="suggestions-list hidden" 
+        role="listbox" 
+        aria-label="Search Suggestions"
+      >
+        </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

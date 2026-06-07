@@ -1,0 +1,114 @@
+/* Layout Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f4f4f6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Master Viewport Container */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  aspect-ratio: 16 / 10;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden; /* Clips elements sliding out of bounds */
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sliding Track - Uses Transform for GPU Acceleration */
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Ensure each slide takes up exactly 100% of parent width */
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Prevents image distortion */
+  user-select: none;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #333333;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.15rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s, opacity 0.2s, transform 0.2s;
+  opacity: 0; /* Hidden by default, appears on hover like Amazon */
+  z-index: 10;
+}
+
+.prev-btn { left: 16px; }
+.next-btn { right: 16px; }
+
+/* Reveal buttons when hovering over the container */
+.carousel-container:hover .nav-btn {
+  opacity: 1;
+}
+
+.nav-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.nav-btn:active {
+  transform: translateY(-50%) scale(0.92);
+}
+
+/* Indicator Nav Dots */
+.carousel-indicators {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.dot.active {
+  background-color: #2563eb; /* Flipkart/Amazon style focus color */
+  transform: scale(1.2);
+  width: 12px;
+  border-radius: 6px; /* Turns into a subtle capsule */
+}
