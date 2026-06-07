@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon.com Clone | Shop online for Electronics, Apparel & More</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-amazon-gray font-sans">
+
+  <header class="w-full text-white">
+    <div class="bg-amazon-dark flex items-center justify-between p-2 gap-4 text-sm">
+      <div class="nav-border p-2 cursor-pointer flex items-center">
+        <span class="text-xl font-bold tracking-tight">amazon</span><span class="text-amber-500 text-xs mt-2">.com</span>
+      </div>
+
+      <div class="nav-border p-2 cursor-pointer hidden md:flex flex-col">
+        <span class="text-gray-400 text-xs">Deliver to</span>
+        <span class="font-bold flex items-center gap-1">
+          India
+        </span>
+      </div>
+
+      <div class="flex flex-1 items-center h-10 rounded-md overflow-hidden bg-amber-500 focus-within:ring-2 focus-within:ring-amber-600">
+        <select class="bg-gray-100 text-gray-700 h-full px-3 border-none outline-none text-xs cursor-pointer hover:bg-gray-200">
+          <option>All Departments</option>
+          <option>Electronics</option>
+          <option>Computers</option>
+          <option>Deals</option>
+        </select>
+        <input type="text" class="flex-1 h-full px-3 text-black border-none outline-none text-base" placeholder="Search Amazon">
+        <button class="bg-amber-500 hover:bg-amber-600 h-full px-6 flex items-center justify-center cursor-pointer text-gray-900 font-bold">
+          &#x1F50D;
+        </button>
+      </div>
+
+      <div class="nav-border p-2 cursor-pointer flex flex-col">
+        <span class="text-xs">Hello, sign in</span>
+        <span class="font-bold text-sm flex items-center">Account & Lists &#9662;</span>
+      </div>
+
+      <div class="nav-border p-2 cursor-pointer hidden sm:flex flex-col">
+        <span class="text-xs">Returns</span>
+        <span class="font-bold text-sm">& Orders</span>
+      </div>
+
+      <div class="nav-border p-2 cursor-pointer flex items-center gap-1 font-bold text-sm relative">
+        <span class="text-amber-500 text-base font-extrabold">0</span>
+        <span>Cart</span>
+      </div>
+    </div>
+
+    <div class="bg-amazon-light flex items-center p-2 text-sm gap-4 overflow-x-auto whitespace-nowrap">
+      <div class="nav-border px-2 py-1 cursor-pointer font-bold flex items-center gap-1">&#9776; All</div>
+      <div class="nav-border px-2 py-1 cursor-pointer">Today's Deals</div>
+      <div class="nav-border px-2 py-1 cursor-pointer">Customer Service</div>
+      <div class="nav-border px-2 py-1 cursor-pointer font-bold">Registry</div>
+      <div class="nav-border px-2 py-1 cursor-pointer">Gift Cards</div>
+      <div class="nav-border px-2 py-1 cursor-pointer">Sell</div>
+    </div>
+  </header>
+
+  <main class="w-full max-w-screen-2xl mx-auto relative pb-12">
+    
+    <div class="w-full relative overflow-hidden h-64 sm:h-96 md:h-120">
+      <img src="https://picsum.photos/1500/600?random=26" alt="Promotional Hero Showcase Banner" class="w-full h-full object-cover">
+      <div class="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t"></div>
+    </div>
+
+    <div class="grid-container px-4 relative z-10 -mt-16 sm:-mt-32 md:-mt-48">
+      
+      <div class="grid-card bg-white p-5 flex flex-col justify-between">
+        <h3 class="text-xl font-bold mb-3 text-gray-900">Gaming accessories</h3>
+        <div class="grid grid-cols-2 gap-3 mb-4">
+          <div class="cursor-pointer">
+            <img src="https://picsum.photos/200/150?random=11" alt="Accessory Unit" class="w-full h-24 object-cover rounded">
+            <span class="text-xs text-gray-700 mt-1 block">Headsets</span>
+          </div>
+          <div class="cursor-pointer">
+            <img src="https://picsum.photos/200/150?random=12" alt="Accessory Unit" class="w-full h-24 object-cover rounded">
+            <span class="text-xs text-gray-700 mt-1 block">Keyboards</span>
+          </div>
+          <div class="cursor-pointer">
+            <img src="https://picsum.photos/200/150?random=13" alt="Accessory Unit" class="w-full h-24 object-cover rounded">
+            <span class="text-xs text-gray-700 mt-1 block">Computer mice</span>
+          </div>
+          <div class="cursor-pointer">
+            <img src="https://picsum.photos/200/150?random=14" alt="Accessory Unit" class="w-full h-24 object-cover rounded">
+            <span class="text-xs text-gray-700 mt-1 block">Chairs</span>
+          </div>
+        </div>
+        <a href="#" class="text-sm text-teal-700 hover:text-amber-600 hover:underline">See more</a>
+      </div>
+
+      <div class="grid-card bg-white p-5 flex flex-col justify-between">
+        <h3 class="text-xl font-bold mb-3 text-gray-900">Deals on Electronics</h3>
+        <div class="cursor-pointer flex-1 flex flex-col justify-center mb-4">
+          <img src="https://picsum.photos/400/300?random=15" alt="Focal Deal Showcase Item" class="w-full h-48 object-cover rounded">
+        </div>
+        <a href="#" class="text-sm text-teal-700 hover:text-amber-600 hover:underline">See all deals</a>
+      </div>
+
+      <div class="grid-card bg-white p-5 flex flex-col justify-between">
+        <h3 class="text-xl font-bold mb-3 text-gray-900">Refresh your space</h3>
+        <div class="grid grid-cols-2 gap-3 mb-4">
+          <div class="cursor-pointer">
+            <img src="https://picsum.photos/200/150?random=16" alt="Home Unit" class="w-full h-24 object-cover rounded">
+            <span class="text-xs text-gray-700 mt-1 block">Dining</span>
+          </div>
+          <div class="cursor-pointer">
+            <img src="https://picsum.photos/200/150?random=17" alt="Home Unit" class="w-full h-24 object-cover rounded">
+            <span class="text-xs text-gray-700 mt-1 block">Home decor</span>
+          </div>
+          <div class="cursor-pointer">
+            <img src="https://picsum.photos/200/150?random=18" alt="Home Unit" class="w-full h-24 object-cover rounded">
+            <span class="text-xs text-gray-700 mt-1 block">Kitchen storage</span>
+          </div>
+          <div class="cursor-pointer">
+            <img src="https://picsum.photos/200/150?random=19" alt="Home Unit" class="w-full h-24 object-cover rounded">
+            <span class="text-xs text-gray-700 mt-1 block">Bedding</span>
+          </div>
+        </div>
+        <a href="#" class="text-sm text-teal-700 hover:text-amber-600 hover:underline">Shop the look</a>
+      </div>
+
+      <div class="grid-card bg-white p-5 flex flex-col justify-between">
+        <h3 class="text-xl font-bold mb-3 text-gray-900">Sign in for the best experience</h3>
+        <div class="flex flex-col items-center justify-center flex-1 py-4 mb-4">
+          <button class="w-full bg-amber-400 hover:bg-amber-500 py-2 rounded-md shadow-sm font-medium text-sm text-gray-900 border border-amber-500 transition-colors cursor-pointer">
+            Sign in securely
+          </button>
+        </div>
+        <div class="bg-gray-100 rounded p-3 text-xs text-gray-600 border border-gray-200">
+          New customer? <a href="#" class="text-blue-600 hover:underline">Start here.</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

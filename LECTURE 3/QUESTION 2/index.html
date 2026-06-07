@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinite Scroll Stream Engine</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="feed-viewport">
+    <header class="feed-global-header">
+      <h1>Dynamic Content Feed</h1>
+      <p>Scroll down to dynamically pull fresh mock data records.</p>
+    </header>
+
+    <div id="feedPostsContainer" class="posts-track"></div>
+
+    <div id="feedLoader" class="loading-wrapper hidden">
+      <div class="spinner"></div>
+      <span>Fetching fresh posts...</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

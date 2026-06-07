@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fault-Tolerant API Gateway</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="panel-container">
+    <header class="panel-header">
+      <h1>Resilient Stream Gateway</h1>
+      <p>Simulating Netflix-style fault-tolerance with automated exponential backoff retries.</p>
+    </header>
+
+    <div class="control-box">
+      <button id="fetchBtn" class="action-btn">Request Stream Data</button>
+      <div class="toggle-container">
+        <label>
+          <input type="checkbox" id="forceFailure" checked> Force API Network Failure
+        </label>
+      </div>
+    </div>
+
+    <div class="terminal-log">
+      <h3>Gateway Activity Console Logs:</h3>
+      <div id="consoleTerminal" class="terminal-output">
+        <span class="system-text">[System status]: Core pipeline online. Waiting for request...</span>
+      </div>
+    </div>
+
+    <div id="statusAlert" class="alert-banner hidden" aria-live="assertive"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

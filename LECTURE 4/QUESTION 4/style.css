@@ -1,0 +1,284 @@
+/* ================= GLOBAL RESETS & NETFLIX STYLES ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #141414; /* True Netflix Signature Dark Tone */
+  color: #ffffff;
+  overflow-x: hidden; /* Avoids canvas snapping from row slide items overflow */
+}
+
+/* ================= TRANSLUCENT STICKY HEAD LINE ================= */
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 68px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4%;
+  z-index: 500;
+  transition: background-color 0.3s ease;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.brand-logo {
+  color: #e50914; /* Brand Red */
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+}
+
+.nav-links-shelf {
+  display: flex;
+  gap: 18px;
+}
+
+.nav-links-shelf a {
+  color: #e5e5e5;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links-shelf a:hover, .nav-links-shelf a.active {
+  color: #ffffff;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.profile-avatar-box {
+  width: 32px;
+  height: 32px;
+  background-color: #3b82f6;
+  border-radius: 4px;
+}
+
+/* ================= HERO BILLBOARD SCREEN SCENERY ================= */
+.billboard-hero {
+  position: relative;
+  width: 100%;
+  height: 85vh; /* Large cinematic viewport footprint */
+  display: flex;
+  align-items: center;
+  padding: 0 4%;
+  background-color: #000000;
+}
+
+.hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 10;
+}
+
+/* Vignette Backing Overlap Blend Masks */
+.vignette-mask-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  background: linear-gradient(to right, rgba(20,20,20,0.8) 0%, transparent 100%);
+  z-index: 20;
+}
+
+.vignette-mask-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(to top, #141414 0%, transparent 100%);
+  z-index: 20;
+}
+
+/* Content Panel Placement Layer */
+.hero-content-box {
+  position: relative;
+  z-index: 30;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 40px;
+}
+
+.media-type-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 2px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+/* CTA Action Controls Row */
+.cta-btn-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btn {
+  border: none;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.btn-icon { font-size: 1.1rem; }
+
+.btn-play { background-color: #ffffff; color: #000000; }
+.btn-play:hover { background-color: rgba(255,255,255,0.75); }
+
+.btn-info { background-color: rgba(109, 109, 110, 0.7); color: #ffffff; }
+.btn-info:hover { background-color: rgba(109, 109, 110, 0.4); }
+
+.btn:active { transform: scale(0.97); }
+
+/* ================= HORIZONTAL SCROLL CONTENT SHELVES ================= */
+.content-shelf-layout {
+  position: relative;
+  z-index: 40;
+  margin-top: -60px; /* Pulls elements over hero-fade backdrop vignette layer */
+  padding-bottom: 60px;
+}
+
+.shelf-row {
+  padding: 20px 0 20px 4%;
+  overflow: hidden;
+}
+
+.shelf-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #e5e5e5;
+  margin-bottom: 12px;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+.shelf-title:hover { color: #ffffff; }
+
+/* Horizontal Slider Track Viewports */
+.slider-viewport-track {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 15px 0; /* Creates vertical padding bounds to house poster zoom transforms safely */
+  scroll-behavior: smooth;
+}
+
+/* Hide track scrollbars to mirror premium platform canvases */
+.slider-viewport-track::-webkit-scrollbar {
+  display: none;
+}
+.slider-viewport-track {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Individual Media Cards */
+.poster-card {
+  flex: 0 0 calc(20% - 8px); /* Exact fitment scaling across row channels */
+  min-width: 200px;
+  aspect-ratio: 16 / 9;
+  background-color: #181818;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transform-origin: center center;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease;
+}
+
+.poster-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card details container hidden by default */
+.poster-hover-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 100%);
+  padding: 10px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.action-icons { font-size: 0.85rem; letter-spacing: 4px; }
+.match-percentage { font-size: 0.75rem; font-weight: 700; color: #46d369; }
+
+/* ================= HOVER INTERACTIVITY SPECTACLE MATRIX ================= */
+.poster-card:hover {
+  transform: scale(1.3); /* Cinematic pop zoom */
+  z-index: 100;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Reveal underlying card metadata upon zoom pass */
+.poster-card:hover .poster-hover-details {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Shift neighbor cards slightly out of transit lane path if needed */
+.slider-viewport-track:hover .poster-card:not(:hover) {
+  opacity: 0.8;
+}
+
+/* Responsive Adaptive Scale Compression Layout Adjustments */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.2rem; }
+  .hero-description { font-size: 0.95rem; }
+  .poster-card { flex: 0 0 calc(33.33% - 8px); } /* Expand card scaling profile on smaller displays */
+  .nav-links-shelf { display: none; } /* Hide navigation list on portable mobile frames */
+}

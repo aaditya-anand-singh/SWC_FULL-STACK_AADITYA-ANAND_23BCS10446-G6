@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Photo Upload Gateway</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="upload-card">
+    <header class="upload-header">
+      <h2>Update Profile Photo</h2>
+      <p>Upload a fresh image placeholder. Max file size limit: 2MB.</p>
+    </header>
+
+    <div class="preview-dropzone" id="dropZone">
+      
+      <div class="avatar-viewport">
+        <div id="avatarFallback" class="avatar-fallback">👤</div>
+        <img id="imagePreview" src="" alt="Profile Preview Canvas" class="hidden">
+      </div>
+
+      <input 
+        type="file" 
+        id="fileInput" 
+        accept="image/jpeg, image/png, image/webp" 
+        class="visually-hidden"
+      >
+      
+      <label for="fileInput" class="upload-trigger-btn">Select Photo</label>
+    </div>
+
+    <div id="validationFeedback" class="feedback-msg hidden" aria-live="assertive"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

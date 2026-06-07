@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paginated Inventory System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="catalog-container">
+    <header class="catalog-header">
+      <div>
+        <h1>Search Results</h1>
+        <p id="resultTelemetry">Showing 0-0 of 0 items</p>
+      </div>
+    </header>
+
+    <div id="productGrid" class="product-grid">
+      </div>
+
+    <nav class="pagination-nav" role="navigation" aria-label="Pagination Navigation">
+      <button id="prevPageBtn" class="nav-arrow-btn" aria-label="Previous Page">
+        &#10094; Prev
+      </button>
+
+      <div id="numericButtonsBox" class="numeric-btn-row">
+        </div>
+
+      <button id="nextPageBtn" class="nav-arrow-btn" aria-label="Next Page">
+        Next &#10095;
+      </button>
+    </nav>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

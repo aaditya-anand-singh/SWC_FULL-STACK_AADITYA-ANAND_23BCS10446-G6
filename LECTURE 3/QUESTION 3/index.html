@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimized Live Filtering (Debounced)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="search-container">
+    <header class="search-header">
+      <h1>Product Catalog</h1>
+      <p>Live searching with a 300ms built-in computational debounce loop.</p>
+    </header>
+
+    <div class="input-wrapper">
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Search electronic variants (e.g., iPhone, Laptop)..."
+        autocomplete="off"
+      >
+      <span id="searchStatus" class="status-badge">Engine Ready</span>
+    </div>
+
+    <ul id="resultsContainer" class="results-list">
+      </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

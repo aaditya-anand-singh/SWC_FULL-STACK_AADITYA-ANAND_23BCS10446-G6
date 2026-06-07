@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Directory Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    <header class="dashboard-header">
+      <div>
+        <h1>User Directory Console</h1>
+        <p>Synchronized live network ledger tracking authorized account nodes.</p>
+      </div>
+      <button id="refreshBtn" class="action-btn">Sync Data</button>
+    </header>
+
+    <div id="loadingState" class="state-container hidden" aria-live="polite">
+      <div class="spinner"></div>
+      <p>Establishing network tunnel & downloading payloads...</p>
+    </div>
+
+    <div id="errorState" class="state-container error-box hidden" aria-live="assertive">
+      <span class="error-icon">&#9888;</span>
+      <p id="errorMessage">Failed to download system metadata directory.</p>
+    </div>
+
+    <div id="directoryGrid" class="directory-grid">
+      </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

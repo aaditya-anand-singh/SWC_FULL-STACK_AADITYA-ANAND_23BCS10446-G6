@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanban Project Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="board-wrapper">
+    <header class="board-header">
+      <h1>Team Workspace Board</h1>
+      <p>Drag and drop task records across progress lanes to sync development cycles.</p>
+    </header>
+
+    <div class="kanban-board">
+      
+      <div class="kanban-column" id="col-todo">
+        <div class="column-header">
+          <span class="column-title">To Do</span>
+          <span class="column-count">3</span>
+        </div>
+        <div class="card-list" data-status="todo">
+          <div class="task-card" draggable="true" id="task-101">
+            <h4>Refactor Auth Middleware</h4>
+            <p>Upgrade token validation parsing structures to support multi-tenant sessions.</p>
+            <div class="card-tag tech">Engineering</div>
+          </div>
+          <div class="task-card" draggable="true" id="task-102">
+            <h4>Optimize Asset Pipelines</h4>
+            <p>Configure image compression webhooks to run across cloud storage buckets automatically.</p>
+            <div class="card-tag tech">Performance</div>
+          </div>
+          <div class="task-card" draggable="true" id="task-103">
+            <h4>Design Onboarding Flow</h4>
+            <p>Draft user sequence mockups mapping custom configuration steps.</p>
+            <div class="card-tag design">UX/UI</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kanban-column" id="col-progress">
+        <div class="column-header">
+          <span class="column-title">In Progress</span>
+          <span class="column-count">1</span>
+        </div>
+        <div class="card-list" data-status="progress">
+          <div class="task-card" draggable="true" id="task-104">
+            <h4>Write Integration Specs</h4>
+            <p>Mock out core system API payloads to build comprehensive route verification arrays.</p>
+            <div class="card-tag testing">QA</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kanban-column" id="col-done">
+        <div class="column-header">
+          <span class="column-title">Done</span>
+          <span class="column-count">1</span>
+        </div>
+        <div class="card-list" data-status="done">
+          <div class="task-card" draggable="true" id="task-105">
+            <h4>Setup Vite Framework</h4>
+            <p>Initialize project scaffolds, wire up environment variable files, and define paths.</p>
+            <div class="card-tag ops">DevOps</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

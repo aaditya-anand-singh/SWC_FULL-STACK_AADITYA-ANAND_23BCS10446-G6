@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: #0f172a; /* High contrast cinematic dark theme */
+  color: #f8fafc;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.panel-container {
+  width: 100%;
+  max-width: 680px;
+}
+
+.panel-header {
+  margin-bottom: 24px;
+}
+
+.panel-header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.panel-header p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+/* Controls interface block */
+.control-box {
+  background-color: #1e293b;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.action-btn {
+  background-color: #e50914; /* Netflix Brand Red */
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s, transform 0.1s;
+}
+
+.action-btn:hover { background-color: #b80710; }
+.action-btn:active { transform: scale(0.98); }
+.action-btn:disabled { background-color: #475569; cursor: not-allowed; }
+
+.toggle-container {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-container input {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+/* System Terminal Output Styles */
+.terminal-log {
+  background-color: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.terminal-log h3 {
+  font-size: 0.8rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.terminal-output {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.system-text { color: #94a3b8; }
+.retry-text { color: #f59e0b; font-weight: 600; }
+.error-text { color: #ef4444; font-weight: 600; }
+.success-text { color: #10b981; font-weight: 600; }
+
+/* Global Visual Alert Banner components */
+.alert-banner {
+  padding: 14px 16px;
+  border-radius: 6px;
+  font-size: 0.925rem;
+  font-weight: 500;
+  margin-top: 16px;
+  animation: flashIn 0.2s ease-out;
+}
+
+.alert-banner.error { background-color: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444; color: #fca5a5; }
+.alert-banner.success { background-color: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #a7f3d0; }
+.hidden { display: none !important; }
+
+@keyframes flashIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
